@@ -13,10 +13,11 @@ const Chart = () => {
 				{ title: "Savings", value: 500, color: "#35D900" },
 			]}
             label={(data) => data.dataEntry.title}
-			paddingAngle={2}
+			lineWidth={40}
             style={{ position: "relative" }}
-            labelStyle={{ fontSize: "4px", fill: "#ffffff"}}
-            labelPosition={50}
+            labelStyle={{ fontSize: "4px", fill: "#000000"}}
+            labelPosition={80}
+			animate={true}
         >
             <div className="chart-inner-text">
                 <p>$2200</p>
