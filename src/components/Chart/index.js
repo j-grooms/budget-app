@@ -29,7 +29,6 @@ const Chart = () => {
 	};
 
 	return (
-		// TODO: Build legend for chart?
 		<div className="chart-container">
 			<PieChart
 				// data, click handler
@@ -42,12 +41,8 @@ const Chart = () => {
 				startAngle={75} // start of 1st segment
 				totalValue={2500} // TODO: add user's monthly budget when API routes exist
 				lineWidth={35} // makes the pie chart a donut chart
-
-				// labels
-				// label={(data) => data.dataEntry.title}
-				// labelStyle={labelStyle}
-				// labelPosition={78}
 			/>
+
 			<div className="chart-legend">
 				<p>Mandatory: {data[0].value}</p>
 				<p>Discretionary: {data[1].value}</p>
