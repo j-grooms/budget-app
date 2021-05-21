@@ -1,5 +1,5 @@
 import React from "react";
-import { useHistory } from 'react-router-dom';
+import { useHistory } from "react-router-dom";
 
 import { PieChart } from "react-minimal-pie-chart";
 import "./chart.css";
@@ -14,41 +14,46 @@ const Chart = () => {
 		{ title: "Savings", value: 500, color: "#35D900" },
 	];
 
-	const labelStyle = {
-		fontSize: "2pt",
-		fontWeight: "700",
-		fill: "#000000",
-		textDecoration: "underline",
-		cursor: "pointer",
-	};
+	// const labelStyle = {
+	// 	fontSize: "2pt",
+	// 	fontWeight: "700",
+	// 	fill: "#000000",
+	// 	textDecoration: "underline",
+	// 	cursor: "pointer",
+	// };
 
-	const segmentsStyle = {cursor: "pointer"};
+	const segmentsStyle = { cursor: "pointer" };
 
 	const onClick = (e, index) => {
-		history.push(`/category/${data[index].title.toLowerCase()}`)
-	}
+		history.push(`/category/${data[index].title.toLowerCase()}`);
+	};
 
 	return (
 		// TODO: Build legend for chart?
-		<PieChart
-			// data, click handler
-			data={data}
-			onClick={onClick}
-			segmentsStyle={segmentsStyle}
+		<div className="chart-container">
+			<PieChart
+				// data, click handler
+				data={data}
+				onClick={onClick}
+				segmentsStyle={segmentsStyle}
 
-			// chart
-			animate={true}
-			startAngle={75} // start of 1st segment
-			viewBoxSize={[150, 150]} // makes the resulting svg smaller
-			totalValue={2800} // TODO: add user's monthly budget when API routes exist
-			lineWidth={40} // makes the pie chart a donut chart
+				// chart
+				animate={true}
+				startAngle={75} // start of 1st segment
+				totalValue={2500} // TODO: add user's monthly budget when API routes exist
+				lineWidth={35} // makes the pie chart a donut chart
 
-
-			// labels
-			// label={(data) => data.dataEntry.title}
-			// labelStyle={labelStyle}
-			// labelPosition={78}
-		/>
+				// labels
+				// label={(data) => data.dataEntry.title}
+				// labelStyle={labelStyle}
+				// labelPosition={78}
+			/>
+			<div className="chart-legend">
+				<p>Mandatory: {data[0].value}</p>
+				<p>Discretionary: {data[1].value}</p>
+				<p>Savings: {data[2].value}</p>
+			</div>
+		</div>
 	);
 };
 

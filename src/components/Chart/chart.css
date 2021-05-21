@@ -1,11 +1,25 @@
-.chart-inner-text {
+.chart-container {
+    position: relative;
+    width: 500px;
+    height: auto;
+    margin: 100px auto;
+}
+
+.chart-legend {
     position: absolute;
-    /* top: 0;
+    top: 190px;
+    left: 190px;
+}
+
+
+/* .chart-inner-text {
+    position: absolute;
+    top: 0;
     right: 0;
     left: 0;
-    bottom: 0; */
+    bottom: 0;
     padding-top: 40%;
     text-align: center;
     font-size: 13px;
     z-index: -1;
-}
+} */
